@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dp5t64ode0jis"]
 
-[ext_resource type="Script" uid="uid://bvhdipumn71t7" path="res://first_person_controller.gd" id="1_n4j6h"]
+[ext_resource type="Script" uid="uid://bvhdipumn71t7" path="res://objects/Player/first_person_controller.gd" id="1_n4j6h"]
 
 [sub_resource type="Curve" id="Curve_n4j6h"]
 _limits = [-1.0, 0.1, 0.0, 1.0]

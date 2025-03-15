@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://cdt62dqmx1s3w"]
+
+[ext_resource type="PackedScene" uid="uid://b1xgsomc56p2y" path="res://Models/TestMap.blend" id="1_w2mix"]
+[ext_resource type="PackedScene" uid="uid://dn5oohuocl8fi" path="res://objects/Player/player.tscn" id="2_eqf1g"]
+[ext_resource type="PackedScene" uid="uid://biilr5jxl4drj" path="res://Models/SlotMachine.blend" id="3_sy4jq"]
+
+[node name="Test Map" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="TestMap" parent="." instance=ExtResource("1_w2mix")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.51099, 0.958055, 2.69897)
+
+[node name="Player" parent="." instance=ExtResource("2_eqf1g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.1182, 6.33433, -3.21042)
+
+[node name="SlotMachine" parent="." instance=ExtResource("3_sy4jq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.20112, 1.93436, -29.8793)

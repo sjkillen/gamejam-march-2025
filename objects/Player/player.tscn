@@ -1,7 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://bt7xgyuh3ox8g"]
+[gd_scene load_steps=4 format=3 uid="uid://dn5oohuocl8fi"]
 
-[ext_resource type="PackedScene" uid="uid://dp5t64ode0jis" path="res://first_person_controller.tscn" id="1_4flbx"]
-[ext_resource type="Script" uid="uid://dk0wlovm5snbm" path="res://player.gd" id="1_onrkg"]
+[ext_resource type="PackedScene" uid="uid://dp5t64ode0jis" path="res://objects/Player/first_person_controller.tscn" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://dk0wlovm5snbm" path="res://objects/Player/player.gd" id="1_onrkg"]
 [ext_resource type="PackedScene" uid="uid://c7840fc4qlcua" path="res://ui/countdown.tscn" id="3_i3pqv"]
 
 [node name="Player" type="Node3D"]
