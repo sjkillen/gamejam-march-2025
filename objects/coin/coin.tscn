@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://don00tr50aetn"]
+
+[ext_resource type="PackedScene" uid="uid://c63iujwbkymva" path="res://objects/coin/coin.glb" id="1_s3apc"]
+[ext_resource type="Script" uid="uid://xigwqk3vmvcc" path="res://objects/coin/coin.gd" id="2_gp412"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_gp412"]
+radius = 0.338299
+
+[node name="coin" instance=ExtResource("1_s3apc")]
+script = ExtResource("2_gp412")
+
+[node name="Area3D" type="Area3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0"]
+shape = SubResource("SphereShape3D_gp412")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

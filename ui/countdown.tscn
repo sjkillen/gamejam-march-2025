@@ -1,0 +1,53 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7840fc4qlcua"]
+
+[ext_resource type="Script" uid="uid://chrkykwvuy20f" path="res://ui/countdown.gd" id="1_yggkt"]
+[ext_resource type="SpriteFrames" uid="uid://2iqjffvq7wqf" path="res://ui/countdown_frames.tres" id="2_dhgls"]
+
+[node name="Countdown" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = -3.0
+offset_right = 2.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yggkt")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="1s" type="AnimatedSprite2D" parent="Control"]
+unique_name_in_owner = true
+position = Vector2(-83, -57)
+sprite_frames = ExtResource("2_dhgls")
+frame_progress = 0.188794
+speed_scale = 10.0
+
+[node name="10s" type="AnimatedSprite2D" parent="Control"]
+unique_name_in_owner = true
+position = Vector2(-183, -57)
+sprite_frames = ExtResource("2_dhgls")
+frame_progress = 0.557795
+
+[node name="100s" type="AnimatedSprite2D" parent="Control"]
+unique_name_in_owner = true
+position = Vector2(-283, -57)
+sprite_frames = ExtResource("2_dhgls")
+frame_progress = 0.571856
+speed_scale = 0.1
+
+[node name="Timer" type="Timer" parent="."]
+unique_name_in_owner = true
+one_shot = true

@@ -1,14 +1,24 @@
-[gd_scene load_steps=3 format=3 uid="uid://dp5t64ode0jis"]
+[gd_scene load_steps=4 format=3 uid="uid://dp5t64ode0jis"]
 
 [ext_resource type="Script" uid="uid://bvhdipumn71t7" path="res://first_person_controller.gd" id="1_n4j6h"]
+
+[sub_resource type="Curve" id="Curve_n4j6h"]
+_limits = [-1.0, 0.1, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.143617, 0.1), 0.0, 0.0, 0, 0, Vector2(1, -0.789888), 0.122295, 0.0, 0, 0]
+point_count = 3
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_21lqr"]
 
 [node name="FirstPersonController" type="CharacterBody3D"]
 script = ExtResource("1_n4j6h")
+jump_charge_crouch_anim_curve = SubResource("Curve_n4j6h")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_21lqr")
 
-[node name="Camera3D" type="Camera3D" parent="."]
+[node name="CameraRotation" type="Node3D" parent="."]
+unique_name_in_owner = true
+
+[node name="Camera3D" type="Camera3D" parent="CameraRotation"]
+unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.729202, -0.20493)
