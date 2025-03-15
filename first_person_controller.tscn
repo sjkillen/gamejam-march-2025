@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dp5t64ode0jis"]
+
+[ext_resource type="Script" uid="uid://bvhdipumn71t7" path="res://first_person_controller.gd" id="1_n4j6h"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_21lqr"]
+
+[node name="FirstPersonController" type="CharacterBody3D"]
+script = ExtResource("1_n4j6h")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_21lqr")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.729202, -0.20493)
