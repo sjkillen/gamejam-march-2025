@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://dp5t64ode0jis"]
+[gd_scene load_steps=5 format=3 uid="uid://dp5t64ode0jis"]
 
 [ext_resource type="Script" uid="uid://bvhdipumn71t7" path="res://objects/Player/first_person_controller.gd" id="1_n4j6h"]
+[ext_resource type="AnimationLibrary" uid="uid://cua6mhhgcvbj4" path="res://objects/Player/player_animations.glb" id="2_xgvlr"]
 
 [sub_resource type="Curve" id="Curve_n4j6h"]
 _limits = [-1.0, 0.1, 0.0, 1.0]
@@ -16,9 +17,17 @@ jump_charge_crouch_anim_curve = SubResource("Curve_n4j6h")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_21lqr")
 
-[node name="CameraRotation" type="Node3D" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+&"": ExtResource("2_xgvlr")
+}
+
+[node name="CameraPosition" type="Node3D" parent="."]
+
+[node name="CameraRotation" type="Node3D" parent="CameraPosition"]
 unique_name_in_owner = true
 
-[node name="Camera3D" type="Camera3D" parent="CameraRotation"]
+[node name="Camera3D" type="Camera3D" parent="CameraPosition/CameraRotation"]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.729202, -0.20493)

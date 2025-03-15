@@ -51,3 +51,7 @@ speed_scale = 0.1
 [node name="Timer" type="Timer" parent="."]
 unique_name_in_owner = true
 one_shot = true
+
+[connection signal="animation_looped" from="Control/1s" to="." method="_on_1s_animation_loop"]
+[connection signal="animation_looped" from="Control/10s" to="." method="_on_10s_animation_loop"]
+[connection signal="animation_looped" from="Control/100s" to="." method="_on_100s_animation_loop"]

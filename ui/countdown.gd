@@ -1,4 +1,3 @@
-@tool
 extends Control
 
 signal out_of_time
@@ -6,6 +5,7 @@ signal out_of_time
 const REGULAR_COUNTDOWN = 1.0
 const REVERSE_SPEED = -10.0
 var speed = -1.0
+
 
 func _ready() -> void:
 	Globals.add_time_to_counter.connect(add_time_to_counter)
@@ -22,9 +22,7 @@ func _process(_delta: float) -> void:
 	%"100s".speed_scale = 0.1 * speed
 	%"10s".speed_scale = 1.0 * speed
 	%"1s".speed_scale = 10.0 * speed
-	
-	if %"100s".frame == (%"100s".sprite_frames.get_frame_count("default") - 1):
-		out_of_time.emit()
+
 
 func add_time_to_counter(amount: float):
 	if %Timer.is_stopped():
@@ -33,3 +31,18 @@ func add_time_to_counter(amount: float):
 	var left: float = %Timer.time_left
 	%Timer.stop()
 	%Timer.start(left + amount)
+
+
+func _on_100s_animation_loop() -> void:
+	if speed < 0.0:
+		%"100s".frame = 0
+	else:
+		out_of_time.emit()
+
+
+func _on_10s_animation_loop() -> void:
+	pass
+
+
+func _on_1s_animation_loop() -> void:
+	pass

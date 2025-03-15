@@ -14,10 +14,16 @@ var max_jump_charge = 10.0
 var jump_charge = 0.0
 var jump_charge_time = .05
 
+
+var prev_velocity := Vector3.ZERO
+
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 func _physics_process(delta: float) -> void:
+	if is_on_floor() and prev_velocity.y < 0.0:
+		%AnimationPlayer.play("Landing")
+		
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
@@ -42,7 +48,10 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
+	prev_velocity = velocity
 	move_and_slide()
+
+
 
 func _process(_delta: float) -> void:
 	# Crouching while charging jump
