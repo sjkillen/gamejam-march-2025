@@ -41,8 +41,10 @@ func _on_100s_animation_loop() -> void:
 
 
 func _on_10s_animation_loop() -> void:
-	pass
+	if %"100s".frame == 0:
+		%"10s".frame = 0
 
 
 func _on_1s_animation_loop() -> void:
-	pass
+	if %"100s".frame == 0:
+		%"1s".frame = 0
