@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://duh27caj3oqnd"]
+
+[ext_resource type="Texture2D" uid="uid://b1uh0d423fngu" path="res://Models/Carpet.jpg" id="1_wqgct"]
+
+[resource]
+resource_name = "Floor"
+albedo_texture = ExtResource("1_wqgct")
+uv1_scale = Vector3(34.455, 34.455, 34.455)

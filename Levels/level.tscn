@@ -1,39 +1,20 @@
-[gd_scene load_steps=7 format=3 uid="uid://dtt3g1uri48rc"]
+[gd_scene load_steps=5 format=3 uid="uid://dtt3g1uri48rc"]
 
 [ext_resource type="PackedScene" uid="uid://dn5oohuocl8fi" path="res://objects/Player/player.tscn" id="1_gtnvv"]
+[ext_resource type="PackedScene" uid="uid://leh5571to2y1" path="res://Levels/casino.tscn" id="1_wav5q"]
 [ext_resource type="PackedScene" uid="uid://don00tr50aetn" path="res://objects/coin/coin.tscn" id="2_wav5q"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_5xgho"]
-size = Vector3(10, 0.1, 10)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_u52ul"]
-size = Vector3(10, 0.1, 10)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u52ul"]
-albedo_color = Color(1, 0.399231, 0.488851, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_vonw3"]
+[sub_resource type="Environment" id="Environment_wav5q"]
 
 [node name="Level" type="Node3D"]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.317588, 0)
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_wav5q")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
-mesh = SubResource("BoxMesh_5xgho")
-skeleton = NodePath("../..")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-shape = SubResource("BoxShape3D_u52ul")
+[node name="casino" parent="." instance=ExtResource("1_wav5q")]
 
 [node name="Player" parent="." instance=ExtResource("1_gtnvv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.381261, 0)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.839364, 0, -0.54357, 0, 1, 0, 0.54357, 0, 0.839364, 0, 0.381261, -4.91574)
-material_override = SubResource("StandardMaterial3D_u52ul")
-mesh = SubResource("BoxMesh_vonw3")
-skeleton = NodePath("../Player")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.27588, 0)
 
 [node name="coin" parent="." instance=ExtResource("2_wav5q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.16522, -0.217588, -0.0846074)

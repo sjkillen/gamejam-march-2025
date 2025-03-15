@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bfq2xjxsamsgl"]
+
+[ext_resource type="PackedScene" uid="uid://b7wt2hyxw2u8o" path="res://Models/environment_slots.tscn" id="1_j0erk"]
+
+[node name="PairOfSlots" type="Node3D"]
+
+[node name="EnvironmentSlots" parent="." instance=ExtResource("1_j0erk")]
+
+[node name="EnvironmentSlots2" parent="." instance=ExtResource("1_j0erk")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.87696, 0, 1.01646)

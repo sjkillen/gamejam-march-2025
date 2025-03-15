@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://leh5571to2y1"]
+
+[ext_resource type="PackedScene" uid="uid://cmcnc8f1hg6yb" path="res://Levels/casino.glb" id="1_ncrn0"]
+
+[node name="casino" instance=ExtResource("1_ncrn0")]
