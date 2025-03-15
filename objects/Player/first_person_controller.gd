@@ -64,4 +64,5 @@ func camera_move(delta: float):
 		move = camera_move_event
 	camera_move_event = Vector2.ZERO
 	%Camera3D.global_rotation.x -= move.y*delta
+	%Camera3D.global_rotation.x = clampf(%Camera3D.global_rotation.x, -1.0, 1.0)
 	%CameraRotation.global_rotation.y -= move.x*delta
