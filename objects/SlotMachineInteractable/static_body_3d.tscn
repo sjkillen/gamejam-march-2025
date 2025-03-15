@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bhn5p3isbilx6"]
+
+[ext_resource type="PackedScene" uid="uid://biilr5jxl4drj" path="res://Models/SlotMachine.blend" id="1_ebohj"]
+
+[node name="StaticBody3D" type="StaticBody3D"]
+
+[node name="SlotMachine" parent="." instance=ExtResource("1_ebohj")]

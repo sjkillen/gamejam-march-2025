@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://dp5t64ode0jis"]
+[gd_scene load_steps=5 format=3 uid="uid://dp5t64ode0jis"]
 
 [ext_resource type="Script" uid="uid://bvhdipumn71t7" path="res://objects/Player/first_person_controller.gd" id="1_n4j6h"]
+[ext_resource type="PackedScene" uid="uid://c42ae1qe60830" path="res://objects/Player/Raycast/ray_cast_3d.tscn" id="2_xgvlr"]
 
 [sub_resource type="Curve" id="Curve_n4j6h"]
 _limits = [-1.0, 0.1, 0.0, 1.0]
@@ -22,3 +23,6 @@ unique_name_in_owner = true
 [node name="Camera3D" type="Camera3D" parent="CameraRotation"]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.729202, -0.20493)
+
+[node name="RayCast3D" parent="CameraRotation/Camera3D" instance=ExtResource("2_xgvlr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0236812, 0.00814573)
