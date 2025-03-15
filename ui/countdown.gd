@@ -13,7 +13,7 @@ func _ready() -> void:
 	%"10s".play("default")
 	%"1s".play("default")
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if %Timer.is_stopped():
 		speed = REGULAR_COUNTDOWN
 	else:
