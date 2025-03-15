@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dp5t64ode0jis"]
+[gd_scene load_steps=6 format=3 uid="uid://dp5t64ode0jis"]
 
 [ext_resource type="Script" uid="uid://bvhdipumn71t7" path="res://objects/Player/first_person_controller.gd" id="1_n4j6h"]
 [ext_resource type="AnimationLibrary" uid="uid://cua6mhhgcvbj4" path="res://objects/Player/player_animations.glb" id="2_xgvlr"]
+[ext_resource type="PackedScene" uid="uid://c42ae1qe60830" path="res://objects/Player/Raycast/ray_cast_3d.tscn" id="3_1lwis"]
 
 [sub_resource type="Curve" id="Curve_n4j6h"]
 _limits = [-1.0, 0.1, 0.0, 1.0]
@@ -32,5 +33,18 @@ unique_name_in_owner = true
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.729202, -0.20493)
 
-[node name="RayCast3D" parent="CameraRotation/Camera3D" instance=ExtResource("2_xgvlr")]
+[node name="RayCast3D" parent="CameraPosition/CameraRotation/Camera3D" instance=ExtResource("3_1lwis")]
+transform = Transform3D(0.405, 0, 0, 0, 0.405, 0, 0, 0, 0.405, 0, 0, 0)
+
+[node name="CameraRotation_Camera3D#RayCast3D" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0236812, 0.00814573)
+script = null
