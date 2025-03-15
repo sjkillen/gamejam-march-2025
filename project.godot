@@ -11,17 +11,13 @@ config_version=5
 [application]
 
 config/name="TheGamblingRooms"
-run/main_scene="uid://c1x638ar8wi05"
+run/main_scene="uid://cdt62dqmx1s3w"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 Globals="*res://Globals.gd"
-
-[filesystem]
-
-import/blender/enabled=false
 
 [input]
 
