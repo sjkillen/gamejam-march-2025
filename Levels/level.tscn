@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dtt3g1uri48rc"]
+[gd_scene load_steps=12 format=3 uid="uid://dtt3g1uri48rc"]
 
 [ext_resource type="PackedScene" uid="uid://dn5oohuocl8fi" path="res://objects/Player/player.tscn" id="1_gtnvv"]
 [ext_resource type="PackedScene" uid="uid://s8gsnyqp01xo" path="res://ui/gamble_reminder.tscn" id="1_t80w2"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://cgmttttwev7ve" path="res://Levels/navigation_region_3d.gd" id="3_uhyyw"]
 [ext_resource type="PackedScene" uid="uid://12gupl8wcbcs" path="res://npc/npc.tscn" id="4_xto7t"]
 [ext_resource type="AudioStream" uid="uid://bxqyaapy68mfe" path="res://sound/background_hum.wav" id="8_ecu0b"]
+[ext_resource type="PackedScene" uid="uid://c131ptxcf33dk" path="res://ui/JumpScare/JumpScare.tscn" id="9_t2u7g"]
 
 [sub_resource type="Environment" id="Environment_wav5q"]
 glow_enabled = true
@@ -56,3 +57,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.16515, 0.46978, -34.7975)
 stream = ExtResource("8_ecu0b")
 volume_db = -5.0
 autoplay = true
+
+[node name="JumpScare" parent="." instance=ExtResource("9_t2u7g")]
