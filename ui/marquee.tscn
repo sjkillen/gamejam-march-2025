@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cqgaeyqsdr5v6"]
+[gd_scene load_steps=4 format=3 uid="uid://cqgaeyqsdr5v6"]
 
 [ext_resource type="Script" uid="uid://d1j27fpqnqa2e" path="res://ui/marquee.gd" id="1_wwhnj"]
 [ext_resource type="FontFile" uid="uid://eajnq5ilb2j7" path="res://fonts/Electrolize/Electrolize-Regular.ttf" id="2_pp5pr"]
+[ext_resource type="AudioStream" uid="uid://bd7fvg5jsgd4y" path="res://sound/marquee.mp3" id="3_pp5pr"]
 
 [node name="Marquee" type="Control"]
 layout_mode = 3
@@ -30,3 +31,6 @@ offset_bottom = 23.0
 theme_override_fonts/font = ExtResource("2_pp5pr")
 theme_override_font_sizes/font_size = 90
 text = "OFFER NOW"
+
+[node name="Marquee" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_pp5pr")

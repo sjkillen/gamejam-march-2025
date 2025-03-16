@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dn5oohuocl8fi"]
+[gd_scene load_steps=7 format=3 uid="uid://dn5oohuocl8fi"]
 
 [ext_resource type="PackedScene" uid="uid://dp5t64ode0jis" path="res://objects/Player/first_person_controller.tscn" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://dk0wlovm5snbm" path="res://objects/Player/player.gd" id="1_onrkg"]
 [ext_resource type="PackedScene" uid="uid://c7840fc4qlcua" path="res://ui/countdown.tscn" id="3_i3pqv"]
+[ext_resource type="AudioStream" uid="uid://dvc6r7lmywqwn" path="res://sound/collect.wav" id="4_76bfe"]
+[ext_resource type="AudioStream" uid="uid://qj0dj0ci23b3" path="res://sound/npc_bump.ogg" id="5_8e3mr"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hi0mj"]
 radius = 0.573603
@@ -21,6 +23,13 @@ shape = SubResource("CapsuleShape3D_hi0mj")
 
 [node name="Countdown" parent="." instance=ExtResource("3_i3pqv")]
 unique_name_in_owner = true
+
+[node name="Collect" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_76bfe")
+
+[node name="NpcBump" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_8e3mr")
+volume_db = -10.0
 
 [connection signal="body_entered" from="FirstPersonController/Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="FirstPersonController/Area3D" to="." method="_on_area_3d_body_exited"]

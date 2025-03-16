@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bapc54rwdvak6"]
+[gd_scene load_steps=3 format=3 uid="uid://bapc54rwdvak6"]
 
 [ext_resource type="FontFile" uid="uid://eajnq5ilb2j7" path="res://fonts/Electrolize/Electrolize-Regular.ttf" id="1_36x74"]
+[ext_resource type="AudioStream" uid="uid://3i7j0wjl0okx" path="res://sound/lose.wav" id="2_g3utg"]
 
 [node name="DeathScreen" type="Control"]
 layout_mode = 3
@@ -35,3 +36,8 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_36x74")
 theme_override_font_sizes/font_size = 80
 text = "You ran out of time and died"
+
+[node name="Lose" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_g3utg")
+volume_db = -10.0
+autoplay = true

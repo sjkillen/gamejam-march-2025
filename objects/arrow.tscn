@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://lvkpv8w66rqv"]
+[gd_scene load_steps=5 format=3 uid="uid://lvkpv8w66rqv"]
 
 [ext_resource type="PackedScene" uid="uid://csudsliknexca" path="res://objects/arrow.glb" id="1_y283q"]
 [ext_resource type="Script" uid="uid://kxs47tyuq2lp" path="res://objects/arrow.gd" id="2_ledw7"]
+[ext_resource type="AudioStream" uid="uid://cqb3wwg64mfyd" path="res://sound/find_machine.wav" id="3_3at4w"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ledw7"]
 radius = 0.141354
@@ -17,5 +18,9 @@ autoplay = "SPIN"
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.934443, 0)
 shape = SubResource("CapsuleShape3D_ledw7")
+
+[node name="FindMachine" type="AudioStreamPlayer" parent="." index="4"]
+stream = ExtResource("3_3at4w")
+volume_db = -10.0
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

@@ -23,6 +23,7 @@ func _ready() -> void:
 
 
 func play_message(msg: String):
+	$Marquee.play()
 	%Label.text = msg
 	visible = true
 	var w: float = %Label.size.x

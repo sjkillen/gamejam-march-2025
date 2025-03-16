@@ -6,10 +6,13 @@
 [sub_resource type="SphereShape3D" id="SphereShape3D_2clvd"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_gp412"]
-radius = 18.6016
+radius = 3.8279
 
 [node name="coin" instance=ExtResource("1_s3apc")]
 script = ExtResource("2_gp412")
+
+[node name="Coin" parent="." index="0"]
+transform = Transform3D(1.30535, 0, 0, 0, 1.24557, -0.390515, 0, 0.390515, 1.24557, 0, 0, 0)
 
 [node name="CollectArea" type="Area3D" parent="." index="1"]
 
@@ -22,6 +25,9 @@ collision_mask = 32768
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DespawnArea" index="0"]
 shape = SubResource("SphereShape3D_gp412")
+
+[node name="AnimationPlayer" parent="." index="3"]
+autoplay = "SPIN"
 
 [connection signal="body_entered" from="CollectArea" to="." method="_on_area_3d_body_entered"]
 [connection signal="area_entered" from="DespawnArea" to="." method="_on_despawn_area_area_entered"]

@@ -19,10 +19,19 @@ func _process(_delta: float) -> void:
 	if %Timer.is_stopped():
 		if losing_money:
 			speed = LOSE_SPEED
+			%LosingAnimation.play("new_animation")
+			%LosingMoneyIcon.visible = true
 		else:
 			speed = REGULAR_COUNTDOWN
+			%LosingAnimation.stop()
+			%LosingMoneyIcon.visible = false
+		%Winning.visible = false
+		%Winning/WinningANim.stop()
 	else:
+		%Winning.visible = true
+		%Winning/WinningANim.play("new_animation")
 		speed = REVERSE_SPEED
+	
 	
 	%"100s".speed_scale = 0.1 * speed
 	%"10s".speed_scale = 1.0 * speed

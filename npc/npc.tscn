@@ -31,6 +31,6 @@ mesh = SubResource("QuadMesh_o6cys")
 skeleton = NodePath("../CollisionShape3D")
 
 [node name="DropCoin" type="Timer" parent="."]
-wait_time = 60.0
+wait_time = 3.0
 
 [connection signal="timeout" from="DropCoin" to="." method="_on_drop_coin_timeout"]
