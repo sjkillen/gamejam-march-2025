@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://fhrf41kjp40c"]
+[gd_scene load_steps=2 format=3 uid="uid://fhrf41kjp40c"]
 
 [ext_resource type="PackedScene" uid="uid://bapc54rwdvak6" path="res://ui/death_screen.tscn" id="1_4v4r4"]
-[ext_resource type="Script" uid="uid://mfhint3ef1ub" path="res://ui/button.gd" id="2_1cctr"]
 
 [node name="Intro" instance=ExtResource("1_4v4r4")]
 
@@ -13,35 +12,3 @@ offset_bottom = 15.0
 theme_override_font_sizes/font_size = 40
 text = "I only have a bit of time in my bank account. If I can find my lucky machine I'll be set for the night"
 autowrap_mode = 2
-
-[node name="Control" type="Control" parent="." index="1"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -20.0
-offset_top = -175.805
-offset_right = 20.0
-offset_bottom = -135.805
-grow_horizontal = 2
-grow_vertical = 0
-
-[node name="Button" type="Button" parent="Control" index="0"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -83.0
-offset_top = -15.5
-offset_right = 83.0
-offset_bottom = 15.5
-grow_horizontal = 2
-grow_vertical = 2
-text = "Enter the slot rooms"
-script = ExtResource("2_1cctr")
-
-[connection signal="pressed" from="Control/Button" to="Control/Button" method="_on_pressed"]

@@ -5,6 +5,10 @@ signal player_get_coin(coin: Coin)
 signal unpick_machine
 signal pick_new_machine
 
+signal chase_player(v: bool)
+
+var player_position: Vector3
+
 func _use_signals():
 	add_time_to_counter.emit(0.0)
 	player_get_coin.emit(null)

@@ -7,7 +7,7 @@ const LOSE_SPEED = 10.0
 const REVERSE_SPEED = -10.0
 var speed = -1.0
 
-var losing_money = false
+var losing_money: int = 0
 
 func _ready() -> void:
 	Globals.add_time_to_counter.connect(add_time_to_counter)
@@ -17,8 +17,8 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	if %Timer.is_stopped():
-		if losing_money:
-			speed = LOSE_SPEED
+		if losing_money > 0:
+			speed = LOSE_SPEED * losing_money
 			%LosingAnimation.play("new_animation")
 			%LosingMoneyIcon.visible = true
 		else:

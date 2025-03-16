@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://bapc54rwdvak6"]
+[gd_scene load_steps=4 format=3 uid="uid://bapc54rwdvak6"]
 
+[ext_resource type="Script" uid="uid://y0ip3gtfy227" path="res://ui/death_screen.gd" id="1_3qirs"]
 [ext_resource type="FontFile" uid="uid://eajnq5ilb2j7" path="res://fonts/Electrolize/Electrolize-Regular.ttf" id="1_36x74"]
 [ext_resource type="AudioStream" uid="uid://3i7j0wjl0okx" path="res://sound/lose.wav" id="2_g3utg"]
 
@@ -10,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_3qirs")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -41,3 +43,33 @@ text = "You ran out of time and died"
 stream = ExtResource("2_g3utg")
 volume_db = -10.0
 autoplay = true
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Button" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -53.0
+offset_top = -54.425
+offset_right = 53.0
+offset_bottom = -23.425
+grow_horizontal = 2
+grow_vertical = 2
+text = "START GAME"
+
+[connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]

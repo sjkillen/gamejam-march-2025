@@ -4,12 +4,19 @@ class_name NPC
 var starting_region = null
 const SPEED = 5.0
 
+var chasing_player: bool = false
+var non_chasing_target: Vector3 = Vector3.ZERO
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	await save_current_region(get_world_3d().get_navigation_map())
 	path_to_random()
 	_on_drop_coin_timeout()
 	$DropCoin.start(30.0 * randf_range(0.5, 2.0))
+	Globals.chase_player.connect(chase_player)
+
+func chase_player(v: bool):
+	chasing_player = v
 
 func save_current_region(map: RID):
 	while true:
@@ -20,12 +27,19 @@ func save_current_region(map: RID):
 		map = await NavigationServer3D.map_changed
 	
 
-	
+
+func _process(delta: float) -> void:
+	if chasing_player:
+		%NavigationAgent3D.target_position = Globals.player_position
+	else:
+		%NavigationAgent3D.target_position = non_chasing_target
+		
 
 func path_to_random():
 	if starting_region == null:
 		return
 	%NavigationAgent3D.target_position = NavigationServer3D.region_get_random_point(starting_region, 1, false)
+	non_chasing_target = %NavigationAgent3D.target_position
 
 func _physics_process(delta: float) -> void:
 	if (%NavigationAgent3D.target_position - global_position).length() <= 1.0:

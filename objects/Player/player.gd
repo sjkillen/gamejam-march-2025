@@ -4,6 +4,9 @@ class_name Player
 
 func _ready() -> void:
 	Globals.player_get_coin.connect(get_coin)
+
+func _process(_delta: float) -> void:
+	Globals.player_position = $FirstPersonController.global_position
 	
 func get_coin(coin: Coin):
 	$Collect.play()
@@ -20,10 +23,9 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body is NPC:
 		$NpcBump.play()
 		touching_npcs += 1
-		%Countdown.losing_money = true
+		%Countdown.losing_money = touching_npcs
 
 func _on_area_3d_body_exited(body: Node3D) -> void:
 	if body is NPC:
 		touching_npcs = max(touching_npcs - 1, 0)
-		if touching_npcs == 0: 
-			%Countdown.losing_money = false
+		%Countdown.losing_money = touching_npcs

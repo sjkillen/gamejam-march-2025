@@ -29,7 +29,7 @@ stream = ExtResource("4_76bfe")
 
 [node name="NpcBump" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_8e3mr")
-volume_db = -10.0
+volume_db = -20.0
 
 [connection signal="body_entered" from="FirstPersonController/Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="FirstPersonController/Area3D" to="." method="_on_area_3d_body_exited"]
