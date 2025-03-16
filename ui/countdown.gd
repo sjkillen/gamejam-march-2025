@@ -3,8 +3,9 @@ extends Control
 signal out_of_time
 
 const REGULAR_COUNTDOWN = 1.0
-const LOSE_SPEED = 10.0
+const LOSE_SPEED = 50.0
 const REVERSE_SPEED = -10.0
+const MEGA_REVERSE_SPEED = -50.0
 var speed = -1.0
 
 var losing_money: int = 0

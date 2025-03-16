@@ -5,6 +5,11 @@ signal player_get_coin(coin: Coin)
 signal unpick_machine
 signal pick_new_machine
 
+signal new_slots(lucky: bool)
+signal close_slots
+
+signal query_shop_open(fn)
+
 signal chase_player(v: bool)
 
 var player_position: Vector3
@@ -14,3 +19,7 @@ func _use_signals():
 	player_get_coin.emit(null)
 	unpick_machine.emit()
 	pick_new_machine.emit()
+	chase_player.emit()
+	new_slots.emit()
+	close_slots.emit()
+	

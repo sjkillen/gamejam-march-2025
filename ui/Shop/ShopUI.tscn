@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://blf5gpuumu133"]
+[gd_scene load_steps=15 format=3 uid="uid://blf5gpuumu133"]
 
 [ext_resource type="Script" uid="uid://ccasce0pixlhn" path="res://ui/Shop/SlotsAni.gd" id="1_2rdej"]
+[ext_resource type="Script" uid="uid://bldk05ukau6vy" path="res://ui/Shop/shop_ui.gd" id="1_4hxsb"]
 [ext_resource type="AudioStream" uid="uid://cd57wpln7s80e" path="res://sound/SlotSound.wav" id="1_lbqr1"]
 [ext_resource type="Texture2D" uid="uid://ris3vwg82lfk" path="res://ui/Shop/SLOTSSPINER.jpg" id="2_2rdej"]
 [ext_resource type="Texture2D" uid="uid://b1q4bllu14ea1" path="res://Models/environmental_slots_seatTOP.jpg" id="3_xvg71"]
@@ -8,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cpm4xcjr0xs6y" path="res://ui/Shop/apple.jpg" id="5_4mnnr"]
 [ext_resource type="Texture2D" uid="uid://bwu13ksiibyrt" path="res://ui/Shop/bomb.jpg" id="6_lbqr1"]
 [ext_resource type="Texture2D" uid="uid://ceqjycluiy2bn" path="res://ui/Shop/banana.jpg" id="7_4hxsb"]
+[ext_resource type="AudioStream" uid="uid://dvc6r7lmywqwn" path="res://sound/collect.wav" id="10_ubk7c"]
 
 [sub_resource type="Animation" id="Animation_00838"]
 length = 0.001
@@ -156,6 +158,113 @@ tracks/11/keys = {
 "values": [0.0]
 }
 
+[sub_resource type="Animation" id="Animation_8ej1v"]
+resource_name = "Reward 1"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Orange:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.266667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.881005, 0.85), Vector2(1.24427, 1.24659), Vector2(0.881005, 0.85)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Apple:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.0665751, 0.0629744), Vector2(0.0905971, 0.0792418), Vector2(0.0665751, 0.0629744)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Bomb:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.502283, 0.5625), Vector2(1.09312, 1.27598), Vector2(0.502283, 0.5625)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Banana:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.0333333, 0.133333, 0.233333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.920849, 1), Vector2(2.62011, 3.63017), Vector2(0.920849, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Apple:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 2.4415, 0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Bomb:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.166667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 2.16715, 0.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../Banana:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 2.25625, 0.0]
+}
+tracks/7/type = "audio"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../AudioStreamPlayer2D")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("1_lbqr1")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("1_lbqr1")
+}],
+"times": PackedFloat32Array(-0.0333333, 1.46667)
+}
+tracks/7/use_blend = true
+
 [sub_resource type="Animation" id="Animation_senk4"]
 resource_name = "Slots"
 length = 6.1
@@ -220,161 +329,6 @@ tracks/4/keys = {
 "values": [Vector2(-249, 366), Vector2(13, 366), Vector2(13, 366), Vector2(-249, 366)]
 }
 
-[sub_resource type="Animation" id="Animation_8ej1v"]
-resource_name = "Reward 1"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../Orange:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"update": 0,
-"values": []
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../Orange:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.133333, 0.266667),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(0.881005, 0.85), Vector2(1.24427, 1.24659), Vector2(0.881005, 0.85)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../Apple:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"update": 0,
-"values": []
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("../Apple:scale")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(0.0665751, 0.0629744), Vector2(0.0905971, 0.0792418), Vector2(0.0665751, 0.0629744)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("../Bomb:position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"update": 0,
-"values": []
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("../Bomb:scale")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(0.502283, 0.5625), Vector2(1.09312, 1.27598), Vector2(0.502283, 0.5625)]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("../Banana:position")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"update": 0,
-"values": []
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("../Banana:scale")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0.0333333, 0.133333, 0.233333),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(0.920849, 1), Vector2(2.62011, 3.63017), Vector2(0.920849, 1)]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("../Apple:rotation")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [0.0, 2.4415, 0.0]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("../Bomb:rotation")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.166667),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [0.0, 2.16715, 0.0]
-}
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("../Banana:rotation")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [0.0, 2.25625, 0.0]
-}
-tracks/11/type = "audio"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("../AudioStreamPlayer2D")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/keys = {
-"clips": [{
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource("1_lbqr1")
-}, {
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource("1_lbqr1")
-}],
-"times": PackedFloat32Array(-0.0333333, 1.46667)
-}
-tracks/11/use_blend = true
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2rdej"]
 _data = {
 &"RESET": SubResource("Animation_00838"),
@@ -383,6 +337,7 @@ _data = {
 }
 
 [node name="ShopUi" type="Node2D"]
+script = ExtResource("1_4hxsb")
 
 [node name="Panel" type="Panel" parent="."]
 offset_left = 15.0
@@ -476,6 +431,12 @@ scale = Vector2(0.920849, 1)
 texture = ExtResource("7_4hxsb")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
+[node name="SlotSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_lbqr1")
+
+[node name="Collect" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_ubk7c")
 
 [connection signal="animation_finished" from="SlotAni" to="SlotAni" method="_on_animation_finished"]
 [connection signal="button_down" from="Button" to="SlotAni" method="_on_button_button_down"]

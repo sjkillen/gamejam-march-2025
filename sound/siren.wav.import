@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://cd57wpln7s80e"
-path="res://.godot/imported/SlotSound.wav-c7697ee9f1707ab403b72e79c68977de.sample"
+uid="uid://b0eadg15hithn"
+path="res://.godot/imported/siren.wav-64fa8bc45aedd9ea21f5a418e1ec7f9b.sample"
 
 [deps]
 
-source_file="res://sound/SlotSound.wav"
-dest_files=["res://.godot/imported/SlotSound.wav-c7697ee9f1707ab403b72e79c68977de.sample"]
+source_file="res://sound/siren.wav"
+dest_files=["res://.godot/imported/siren.wav-64fa8bc45aedd9ea21f5a418e1ec7f9b.sample"]
 
 [params]
 

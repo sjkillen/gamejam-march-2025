@@ -10,5 +10,5 @@ offset_top = -276.0
 offset_right = 295.0
 offset_bottom = 15.0
 theme_override_font_sizes/font_size = 40
-text = "I only have a bit of time in my bank account. If I can find my lucky machine I'll be set for the night"
+text = "I only have a bit of time in my bank account. If I can find a lucky machine...."
 autowrap_mode = 2

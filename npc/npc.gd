@@ -17,6 +17,9 @@ func _ready() -> void:
 
 func chase_player(v: bool):
 	chasing_player = v
+	if v:
+		await get_tree().create_timer(10.0).timeout
+		chase_player(false)
 
 func save_current_region(map: RID):
 	while true:

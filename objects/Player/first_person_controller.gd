@@ -14,6 +14,10 @@ var max_jump_charge = 10.0
 var jump_charge = 0.0
 var jump_charge_time = .05
 
+var shop_open = false
+
+func open_shop():
+	shop_open = true
 
 var prev_velocity := Vector3.ZERO
 
@@ -30,10 +34,13 @@ func _physics_process(delta: float) -> void:
 
 	camera_move(delta)
 	
-	if Input.is_action_just_released("ui_accept") and is_on_floor():
+	shop_open = false
+	Globals.query_shop_open.emit(open_shop)
+	
+	if not shop_open and Input.is_action_just_released("ui_accept") and is_on_floor():
 		velocity.y = JUMP_POWER_BASE + jump_charge
-		
-	if Input.is_action_pressed("ui_accept"):
+	
+	if not shop_open and Input.is_action_pressed("ui_accept"):
 		charge_jump(delta)
 	else:
 		jump_charge = 0.0
