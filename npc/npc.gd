@@ -31,11 +31,6 @@ func save_current_region(map: RID):
 	
 
 
-func _process(delta: float) -> void:
-	if chasing_player:
-		%NavigationAgent3D.target_position = Globals.player_position
-	else:
-		%NavigationAgent3D.target_position = non_chasing_target
 		
 
 func path_to_random():
@@ -60,3 +55,10 @@ func _on_drop_coin_timeout() -> void:
 	var coin := preload("res://objects/coin/coin.tscn").instantiate()
 	coin.position = position
 	get_parent().add_child(coin)
+
+
+func _process(delta: float):
+	if chasing_player:
+		%NavigationAgent3D.target_position = Globals.player_position
+	elif %NavigationAgent3D.target_position != non_chasing_target:
+		%NavigationAgent3D.target_position = non_chasing_target

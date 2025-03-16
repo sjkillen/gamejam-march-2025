@@ -44,6 +44,10 @@ stream = ExtResource("2_g3utg")
 volume_db = -10.0
 autoplay = true
 
+[node name="Timer" type="Timer" parent="Lose"]
+one_shot = true
+autostart = true
+
 [node name="Control" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 7

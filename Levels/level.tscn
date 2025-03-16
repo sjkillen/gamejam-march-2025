@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dtt3g1uri48rc"]
+[gd_scene load_steps=15 format=3 uid="uid://dtt3g1uri48rc"]
 
 [ext_resource type="PackedScene" uid="uid://dn5oohuocl8fi" path="res://objects/Player/player.tscn" id="1_gtnvv"]
 [ext_resource type="PackedScene" uid="uid://s8gsnyqp01xo" path="res://ui/gamble_reminder.tscn" id="1_t80w2"]
