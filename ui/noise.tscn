@@ -614,7 +614,7 @@ grow_vertical = 2
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Control"]
 modulate = Color(1, 1, 1, 0.232)
-scale = Vector2(2.54, 2.54)
+scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_hqrlr")
 frame_progress = 0.0179282
 script = ExtResource("147_jgqa1")

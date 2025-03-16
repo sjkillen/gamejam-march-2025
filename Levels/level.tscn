@@ -1,8 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://dtt3g1uri48rc"]
+[gd_scene load_steps=10 format=3 uid="uid://dtt3g1uri48rc"]
 
 [ext_resource type="PackedScene" uid="uid://dn5oohuocl8fi" path="res://objects/Player/player.tscn" id="1_gtnvv"]
+[ext_resource type="PackedScene" uid="uid://s8gsnyqp01xo" path="res://ui/gamble_reminder.tscn" id="1_t80w2"]
 [ext_resource type="PackedScene" uid="uid://jx5fnm355mrc" path="res://ui/noise.tscn" id="1_uhyyw"]
 [ext_resource type="PackedScene" uid="uid://leh5571to2y1" path="res://Levels/casino.tscn" id="1_wav5q"]
+[ext_resource type="PackedScene" uid="uid://cqgaeyqsdr5v6" path="res://ui/marquee.tscn" id="3_8a2b0"]
 [ext_resource type="Script" uid="uid://cgmttttwev7ve" path="res://Levels/navigation_region_3d.gd" id="3_uhyyw"]
 [ext_resource type="PackedScene" uid="uid://12gupl8wcbcs" path="res://npc/npc.tscn" id="4_xto7t"]
 
@@ -20,12 +22,19 @@ polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Arr
 
 [node name="Level" type="Node3D"]
 
-[node name="Noise" parent="." instance=ExtResource("1_uhyyw")]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 128
+
+[node name="Noise" parent="CanvasLayer" instance=ExtResource("1_uhyyw")]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
+
+[node name="GambleReminder" parent="." instance=ExtResource("1_t80w2")]
+
+[node name="Marquee" parent="." instance=ExtResource("3_8a2b0")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_wav5q")
