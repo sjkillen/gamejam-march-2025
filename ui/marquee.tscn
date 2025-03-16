@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://cqgaeyqsdr5v6"]
+
+[ext_resource type="Script" uid="uid://d1j27fpqnqa2e" path="res://ui/marquee.gd" id="1_wwhnj"]
+[ext_resource type="FontFile" uid="uid://eajnq5ilb2j7" path="res://fonts/Electrolize/Electrolize-Regular.ttf" id="2_pp5pr"]
+
+[node name="Marquee" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wwhnj")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(0, 93.4)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 30.55
+offset_bottom = 123.95
+grow_horizontal = 2
+color = Color(1, 1, 0, 1)
+
+[node name="Label" type="Label" parent="ColorRect"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("2_pp5pr")
+theme_override_font_sizes/font_size = 90
+text = "OFFER NOW"

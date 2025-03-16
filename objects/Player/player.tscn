@@ -11,3 +11,5 @@ script = ExtResource("1_onrkg")
 
 [node name="Countdown" parent="." instance=ExtResource("3_i3pqv")]
 unique_name_in_owner = true
+
+[connection signal="out_of_time" from="Countdown" to="." method="_on_countdown_out_of_time"]
