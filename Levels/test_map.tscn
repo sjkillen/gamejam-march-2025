@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cdt62dqmx1s3w"]
+[gd_scene load_steps=6 format=3 uid="uid://cdt62dqmx1s3w"]
 
 [ext_resource type="PackedScene" uid="uid://b1xgsomc56p2y" path="res://Models/TestMap.blend" id="1_w2mix"]
 [ext_resource type="PackedScene" uid="uid://dn5oohuocl8fi" path="res://objects/Player/player.tscn" id="2_eqf1g"]
 [ext_resource type="PackedScene" uid="uid://dlbaq3qkot43v" path="res://Models/EnvironmentSlots.blend" id="4_eqf1g"]
 [ext_resource type="PackedScene" uid="uid://bhn5p3isbilx6" path="res://objects/SlotMachineInteractable/static_body_3d.tscn" id="4_sy4jq"]
+[ext_resource type="PackedScene" uid="uid://12gupl8wcbcs" path="res://npc/npc.tscn" id="5_sy4jq"]
 
 [node name="Test Map" type="Node3D"]
 
@@ -26,3 +27,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.59079, 1.81784, -26.7868)
 [node name="StaticBody3D" parent="." instance=ExtResource("4_sy4jq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.715343, 1.91, -21.7517)
 prompt_message = "Poopoo"
+
+[node name="Npc" parent="." instance=ExtResource("5_sy4jq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.53242, 2.09644, -14.2301)
