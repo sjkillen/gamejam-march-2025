@@ -40,7 +40,7 @@ anchor_bottom = 0.5
 environment = SubResource("Environment_wav5q")
 
 [node name="Player" parent="." instance=ExtResource("1_gtnvv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.27588, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.26173, 1.02828, -26.9916)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_wav5q")
@@ -49,4 +49,4 @@ script = ExtResource("3_uhyyw")
 [node name="casino" parent="NavigationRegion3D" instance=ExtResource("1_wav5q")]
 
 [node name="Npc" parent="." instance=ExtResource("4_xto7t")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.380266, 0.46978, -8.02043)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.16515, 0.46978, -34.7975)

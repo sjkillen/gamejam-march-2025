@@ -1,15 +1,27 @@
-[gd_scene load_steps=4 format=3 uid="uid://dn5oohuocl8fi"]
+[gd_scene load_steps=5 format=3 uid="uid://dn5oohuocl8fi"]
 
 [ext_resource type="PackedScene" uid="uid://dp5t64ode0jis" path="res://objects/Player/first_person_controller.tscn" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://dk0wlovm5snbm" path="res://objects/Player/player.gd" id="1_onrkg"]
 [ext_resource type="PackedScene" uid="uid://c7840fc4qlcua" path="res://ui/countdown.tscn" id="3_i3pqv"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hi0mj"]
+radius = 0.573603
+height = 2.83
 
 [node name="Player" type="Node3D"]
 script = ExtResource("1_onrkg")
 
 [node name="FirstPersonController" parent="." instance=ExtResource("1_4flbx")]
 
+[node name="Area3D" type="Area3D" parent="FirstPersonController"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FirstPersonController/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.459623, 0)
+shape = SubResource("CapsuleShape3D_hi0mj")
+
 [node name="Countdown" parent="." instance=ExtResource("3_i3pqv")]
 unique_name_in_owner = true
 
+[connection signal="body_entered" from="FirstPersonController/Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="FirstPersonController/Area3D" to="." method="_on_area_3d_body_exited"]
 [connection signal="out_of_time" from="Countdown" to="." method="_on_countdown_out_of_time"]

@@ -3,9 +3,11 @@ extends Control
 signal out_of_time
 
 const REGULAR_COUNTDOWN = 1.0
+const LOSE_SPEED = 10.0
 const REVERSE_SPEED = -10.0
 var speed = -1.0
 
+var losing_money = false
 
 func _ready() -> void:
 	Globals.add_time_to_counter.connect(add_time_to_counter)
@@ -15,7 +17,10 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	if %Timer.is_stopped():
-		speed = REGULAR_COUNTDOWN
+		if losing_money:
+			speed = LOSE_SPEED
+		else:
+			speed = REGULAR_COUNTDOWN
 	else:
 		speed = REVERSE_SPEED
 	

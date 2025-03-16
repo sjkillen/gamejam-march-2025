@@ -12,6 +12,7 @@ func _ready() -> void:
 	await get_tree().create_timer(10.0).timeout
 	await play_message("TIME = MONEY, IF YOU RUN OUT, PLEASE DIE SOMEWHERE RESPONSIBLE - THANKS, MGMT.")
 	await get_tree().create_timer(5.0).timeout
+	await play_message("SOME PATRONS HAVE BEEN DROPPING THEIR MONEY, FINDERS KEEPERS")
 	while true:
 		messages.shuffle()
 		for message in messages:

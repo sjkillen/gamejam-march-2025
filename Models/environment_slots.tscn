@@ -1,8 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://b7wt2hyxw2u8o"]
+[gd_scene load_steps=4 format=3 uid="uid://b7wt2hyxw2u8o"]
 
 [ext_resource type="PackedScene" uid="uid://c7tro4ndrbuqa" path="res://Models/environment_slots.glb" id="1_2d3c4"]
+[ext_resource type="Script" uid="uid://bxsg5kumbw6dh" path="res://Models/environment_slots.gd" id="2_5gj0u"]
+[ext_resource type="PackedScene" uid="uid://lvkpv8w66rqv" path="res://objects/arrow.tscn" id="2_ss0k4"]
 
 [node name="EnvironmentSlots" instance=ExtResource("1_2d3c4")]
 height = 2.05
 vertices = PackedVector3Array(4.12502, 0, -1.49849, -7.15966, 0, -1.42009, -7.14095, 0, 0.501352, 4.18956, 0, 0.544928)
 affect_navigation_mesh = true
+script = ExtResource("2_5gj0u")
+
+[node name="arrow" parent="." index="1" instance=ExtResource("2_ss0k4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.985412, 0.85793, -0.754956)

@@ -66,6 +66,12 @@ func charge_jump(delta: float):
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		camera_move_event = event.relative * MOUSE_SENSITIVITY
+	if event.is_action("toggle_mouse_capture"):
+		if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
+			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		else:
+			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+		
 
 func camera_move(delta: float):
 	var move := Input.get_vector("camera_left", "camera_right", "camera_up", "camera_down") * CONTROLLER_SENSITITY

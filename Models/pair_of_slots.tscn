@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://bfq2xjxsamsgl"]
+[gd_scene load_steps=3 format=3 uid="uid://bfq2xjxsamsgl"]
 
+[ext_resource type="Script" uid="uid://c17k7do8cikxj" path="res://Models/pair_of_slots.gd" id="1_7mjr4"]
 [ext_resource type="PackedScene" uid="uid://b7wt2hyxw2u8o" path="res://Models/environment_slots.tscn" id="1_j0erk"]
 
 [node name="PairOfSlots" type="Node3D"]
+script = ExtResource("1_7mjr4")
 
 [node name="EnvironmentSlots" parent="." instance=ExtResource("1_j0erk")]
 

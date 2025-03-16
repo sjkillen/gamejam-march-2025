@@ -1,4 +1,5 @@
 extends RigidBody3D
+class_name NPC
 
 var starting_region = null
 const SPEED = 5.0
@@ -8,7 +9,7 @@ func _ready() -> void:
 	await save_current_region(get_world_3d().get_navigation_map())
 	path_to_random()
 	_on_drop_coin_timeout()
-	$DropCoin.start(100.0 * randf_range(0.5, 2.0))
+	$DropCoin.start(30.0 * randf_range(0.5, 2.0))
 
 func save_current_region(map: RID):
 	while true:
