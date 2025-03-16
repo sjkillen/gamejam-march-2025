@@ -3,3 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://c7tro4ndrbuqa" path="res://Models/environment_slots.glb" id="1_2d3c4"]
 
 [node name="EnvironmentSlots" instance=ExtResource("1_2d3c4")]
+height = 2.05
+vertices = PackedVector3Array(4.12502, 0, -1.49849, -7.15966, 0, -1.42009, -7.14095, 0, 0.501352, 4.18956, 0, 0.544928)
+affect_navigation_mesh = true

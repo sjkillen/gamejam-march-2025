@@ -34,6 +34,10 @@ animation/import_rest_as_RESET=false
 import_script/path="uid://bbciy7bkoeq34"
 _subresources={
 "materials": {
+"Ceiling": {
+"use_external/enabled": true,
+"use_external/path": "res://Levels/Ceiling.tres"
+},
 "Floor": {
 "use_external/enabled": true,
 "use_external/path": "res://Levels/Floor.tres"

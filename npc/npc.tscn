@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://12gupl8wcbcs"]
+
+[ext_resource type="Texture2D" uid="uid://c12jxgyngtbmo" path="res://npc/photos/front1_shitty.png" id="1_2xp5l"]
+[ext_resource type="Script" uid="uid://dhb1mokmwlury" path="res://npc/npc.gd" id="1_nhy3c"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nhy3c"]
+radius = 0.416747
+height = 1.26137
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3i1kj"]
+transparency = 1
+albedo_texture = ExtResource("1_2xp5l")
+billboard_mode = 2
+
+[sub_resource type="QuadMesh" id="QuadMesh_o6cys"]
+
+[node name="Npc" type="RigidBody3D"]
+script = ExtResource("1_nhy3c")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+unique_name_in_owner = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.606935, 0)
+shape = SubResource("CapsuleShape3D_nhy3c")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.313559, 0)
+material_override = SubResource("StandardMaterial3D_3i1kj")
+mesh = SubResource("QuadMesh_o6cys")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="DropCoin" type="Timer" parent="."]
+wait_time = 60.0
+
+[connection signal="timeout" from="DropCoin" to="." method="_on_drop_coin_timeout"]

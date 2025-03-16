@@ -7,4 +7,4 @@ func _ready() -> void:
 	
 func get_coin(coin: Coin):
 	coin.queue_free()
-	%Countdown.add_time_to_counter(1.5)
+	%Countdown.add_time_to_counter(0.75)

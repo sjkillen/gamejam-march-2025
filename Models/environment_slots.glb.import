@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/environment_slots.glb-0e183ad75433de9c527e68e
 
 [params]
 
-nodes/root_type=""
+nodes/root_type="NavigationObstacle3D"
 nodes/root_name=""
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
@@ -37,6 +37,16 @@ _subresources={
 "Slot machine": {
 "use_external/enabled": true,
 "use_external/path": "res://Models/Slot machine.tres"
+}
+},
+"nodes": {
+"PATH:Machine/Seat": {
+"generate/physics": true,
+"physics/shape_type": 1
+},
+"PATH:Machine/SlotMachine": {
+"generate/physics": true,
+"physics/shape_type": 1
 }
 }
 }
