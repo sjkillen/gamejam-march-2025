@@ -59,6 +59,8 @@ func _on_drop_coin_timeout() -> void:
 
 func _process(delta: float):
 	if chasing_player:
-		%NavigationAgent3D.target_position = Globals.player_position
+		var dist = (%NavigationAgent3D.target_position - Globals.player_position).length()
+		if dist >= 10.:
+			%NavigationAgent3D.target_position = Globals.player_position
 	elif %NavigationAgent3D.target_position != non_chasing_target:
 		%NavigationAgent3D.target_position = non_chasing_target
