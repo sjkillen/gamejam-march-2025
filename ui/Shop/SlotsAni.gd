@@ -20,7 +20,7 @@ func _on_animation_finished(anim_name: StringName) -> void:
 
 #generate random numbers for the array array
 func randNum():
-	rewardInt = randi_range(1,4)
+	rewardInt = Globals.random()
 
 #will play reward animation + give you buff/debuff
 func getReward():

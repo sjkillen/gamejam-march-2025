@@ -23,3 +23,11 @@ func _use_signals():
 	new_slots.emit()
 	close_slots.emit()
 	
+var randos = [3]
+func random() -> int:
+	if randos.size() == 0:
+		var a = [1, 2, 4].pick_random()
+		randos = [a, 3]
+		randos.shuffle()
+	return randos.pop_at(0)
+	
